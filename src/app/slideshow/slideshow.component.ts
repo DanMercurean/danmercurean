@@ -10,9 +10,9 @@ export class SlideshowComponent implements OnInit {
 
   images = ['background.jpg', 'laptop.jpg', 'austria.jpg'];
   headlines = [
-  'Bring engineering to the next level', 
+  'Bring Software Engineering to the next level', 
   'Born to code', 
-  'Graduated at ULBS'
+  'All started with Developer Akademie'
 ];
   currentImage = 0;
   showImage = true;

@@ -1,7 +1,3 @@
-body {
-    box-sizing: border-box;
-    margin: 0;
-}
 a {
     text-decoration: none;
     color: #000;
@@ -51,4 +47,12 @@ a {
     p {
         text-align: center;
     }
+}
+
+.portfolio-list {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
