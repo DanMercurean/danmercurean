@@ -9,7 +9,7 @@
       <div class="col-md-offset-1 col-md-6" id="box">
         <h2 class="colr">Contact Me!</h2>
         <hr>
-        <form class="form-horizontal" name="contactForm" ng-submit="submitContactForm(ContactDetails)" novalidate>
+        <form action="http://dan-mercurean.developerakademie.com/send_mail.php" method="POST" class="form-horizontal" name="contactForm" >
           <fieldset>
             <!-- Form Name -->
             <!-- Text input-->
@@ -17,7 +17,7 @@
               <div class="col-md-12" ng-class="{ 'has-error' : contactForm.first_name.$invalid && !contactForm.first_name.$pristine }">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input name="first_name" placeholder="Name" ng-model="ContactDetails.FirstName" class="form-control" type="text" required>
+                  <input name="name" placeholder="Name" ng-model="ContactDetails.FirstName" class="form-control" type="text" required>
                 </div>
                 <span ng-show="contactForm.first_name.$invalid && !contactForm.first_name.$pristine" class="help-block">Username is required.</span>
               </div>
@@ -46,7 +46,7 @@
               <div class="col-md-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
-                  <input name="subject" ng-model="ContactDetails.Subject" placeholder="Enter Subject" class="form-control" type="text" required>
+                  <input name="message" ng-model="ContactDetails.Subject" placeholder="Enter Subject" class="form-control" type="text" required>
                 </div>
                 <span ng-show="contactForm.subject.$invalid && !contactForm.subject.$pristine" class="help-block">Subject is required.</span>
               </div>

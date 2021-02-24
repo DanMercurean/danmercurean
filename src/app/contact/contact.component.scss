@@ -1,0 +1,12 @@
+.input-group .form-control {
+z-index: 0 !important;
+}
+
+@media(max-width: 700px) {
+    .container {
+     padding-right: 0px !important; 
+     padding-left: 0px !important;
+    }
+}
+
+
