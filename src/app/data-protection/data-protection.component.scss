@@ -1,7 +1,6 @@
 @media(max-width: 700px) {
     .container{
+        overflow-x: hidden;
         overflow-y: hidden;
-        padding-left: 50px;
-        padding-right: 50px;
     }
 }

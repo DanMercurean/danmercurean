@@ -1,7 +1,7 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script> -->
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <div class="container">
   <div class="row" style="margin-bottom:15px;">
@@ -10,10 +10,10 @@
         <h2 class="colr">Contact Me!</h2>
         <hr>
         <form action="http://dan-mercurean.developerakademie.com/send_mail.php" method="POST" class="form-horizontal" name="contactForm" >
-          <fieldset>
-            <!-- Form Name -->
-            <!-- Text input-->
-            <div class="form-group">
+          <fieldset> -->
+<!-- Form Name -->
+<!-- Text input-->
+<!-- <div class="form-group">
               <div class="col-md-12" ng-class="{ 'has-error' : contactForm.first_name.$invalid && !contactForm.first_name.$pristine }">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -21,9 +21,9 @@
                 </div>
                 <span ng-show="contactForm.first_name.$invalid && !contactForm.first_name.$pristine" class="help-block">Username is required.</span>
               </div>
-            </div>
-            <!-- Text input-->
-            <div class="form-group">
+            </div> -->
+<!-- Text input-->
+<!-- <div class="form-group">
               <div class="col-md-12" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -31,9 +31,9 @@
                 </div>
                 <span ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block"> Enter a valid email.</span>
               </div>
-            </div>
-            <!-- Text input-->
-            <div class="form-group" ng-class="{ 'has-error' : contactForm.phone.$invalid && !contactForm.phone.$pristine }">
+            </div> -->
+<!-- Text input-->
+<!-- <div class="form-group" ng-class="{ 'has-error' : contactForm.phone.$invalid && !contactForm.phone.$pristine }">
               <div class="col-md-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -50,9 +50,9 @@
                 </div>
                 <span ng-show="contactForm.subject.$invalid && !contactForm.subject.$pristine" class="help-block">Subject is required.</span>
               </div>
-            </div>
-            <!-- Text input-->
-            <div class="form-group" ng-class="{ 'has-error' : contactForm.comment.$invalid && !contactForm.comment.$pristine }">
+            </div> -->
+<!-- Text input-->
+<!-- <div class="form-group" ng-class="{ 'has-error' : contactForm.comment.$invalid && !contactForm.comment.$pristine }">
               <div class="col-md-12 inputGroupContainer">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -73,4 +73,83 @@
 
     </div>
   </div>
-</div>
+</div> -->
+<!-- <form class="container" action="http://dan-mercurean.developerakademie.com/send_mail.php" method="POST">
+
+  <label for="fname">Name</label>
+  <input type="text" id="fname" name="name" placeholder="Dein Name...">
+
+  <label for="country">Land</label>
+  <select id="country" name="country">
+    <option value="australia">Australia</option>
+    <option value="canada">Canada</option>
+    <option value="austria">Österreich</option>
+    <option value="germany">Deutschland</option>
+  </select>
+
+  <label for="subject">Nachricht</label>
+  <textarea id="subject" name="message" placeholder="Deine Nachricht an uns..." style="height:200px"></textarea>
+
+  <input type="submit" value="Abschicken">
+
+</form> -->
+
+<form action="http://dan-mercurean.developerakademie.com/send_mail.php" method="POST" [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card page-wrap">
+      <mat-card-header>
+          <mat-card-title>Contact</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input required matInput placeholder="Name" formControlName="name">
+                      <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+                          First name is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <mat-label>Email</mat-label>
+                      <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+                      <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
+                          Email is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+
+
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <mat-label>Subject</mat-label>
+                      <input matInput placeholder="Subject" formControlName="subject">
+                      <mat-error *ngIf="addressForm.controls['subject'].hasError('required')">
+                          A Subject <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <mat-label> Your message</mat-label>
+                      <textarea matInput placeholder=" Your message" formControlName="message"></textarea>
+                      <mat-error *ngIf="addressForm.controls['message'].hasError('required')">
+                          A Message is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+
+      </mat-card-content>
+      <div class="btn-send">
+          <button class="mat-card-actions" color="primary" type="submit">Submit</button>
+      </div>
+  </mat-card>
+</form> 
