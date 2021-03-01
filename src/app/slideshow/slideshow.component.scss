@@ -30,12 +30,13 @@
 
     p {
         margin-left: 120px;
-        max-width: 800px;
+        max-width: 400px;
         padding-left: 32px;
         border-left: 10px solid #d85050;
         color: white;
-        font-size: 2em;
+        font-size: 2.5em;
         transition: 15s ease;
+        line-height: 1;
     }
 }
 

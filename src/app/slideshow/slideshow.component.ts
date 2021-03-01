@@ -12,7 +12,7 @@ export class SlideshowComponent implements OnInit {
   headlines = [
   "Hi, I'm Dan Mercurean. I'm a Front-End Developer.",
   "Bring Software Engineering to the next level", 
-  "All started with Developer Akademie"
+  "Take a look at my latest projects"
 ];
   currentImage = 0;
   showImage = true;
