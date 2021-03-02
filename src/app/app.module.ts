@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +41,7 @@ import { FooterComponent } from './footer/footer.component';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    MatGridListModule,
     ReactiveFormsModule
   ],
   providers: [],

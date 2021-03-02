@@ -37,6 +37,7 @@
     font-size: 40px;
     line-height: 110px;
     font-weight: 400;
+    animation: slideLeft 0.75s ease-in-out;
 }
 .btn-send {
     border-radius: 5px;
@@ -59,6 +60,7 @@
         cursor: pointer;
     }
 }
+
 @media (max-width: 700px) {
     .container {
         padding-right: 0px !important;
