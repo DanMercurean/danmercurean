@@ -1,48 +1,11 @@
-<!-- <div class="portfolio-main-container portfolio-projects">
+<div class="portfolio-main-container portfolio-projects">
     <h1 class="add-animation-left">PORTFOLIO</h1>
 </div>
 <div class="portfolio-category">
-<div id="category_all" class="portfolio-category-clicked add-animation-left">All</div>
-<div id="category_games" class="add-animation-left">Games</div>
-<div id="category_angular" class="add-animation-left">Angular</div>
-<div id="category_group" class="add-animation-left">GroupProjects</div>
+<div id="all" onclick="show('all')" class="portfolio-category-clicked add-animation-left">All</div>
+<div id="games" onclick="show('games')"class="add-animation-left">Games</div>
+<div id="group" onclick="show('group')" class="add-animation-left">GroupProjects</div>
 </div>
-<app-portfolio-project></app-portfolio-project> -->
 
-<div class="section-container portfolio">
+<app-portfolio-project></app-portfolio-project>
 
-    <div class="section-header" [@slideIn]="animationState['portfolio_header']" #portfolioHeader>Portfolio
-        <div class="header-line"></div>
-    </div>
-    <div class="portfolio-grid-wrap">
-
-        <div class="filter-row flex" [@slideInUpwards]="animationState['portfolio_filter']" #portfolioFilter>
-            <div class="filter" [class.active]="currentFilter === ''" (click)="updateFilter()">All</div>
-            <div class="filter" [class.active]="currentFilter === 'Angular'" (click)="updateFilter('Angular')">Angular
-            </div>
-            <div class="filter" [class.active]="currentFilter === 'JavaScript'" (click)="updateFilter('JavaScript')">
-                JavaScript</div>
-        </div>
-
-        <div #portfolioGrid>
-            <mat-grid-list  [cols]="arrangeGrid()" rowHeight="4:3" [style.opacity]="animationState['portfolio'] == 'out' ? '0' : '1'"  [@slideInUpwardsChild]="animationState['portfolio']">
-                <mat-grid-tile *ngFor="let project of visibleProjects">
-                    <img src="{{'./assets/img/projects/'+ project.img }}" >
-                    <div class="project-wrap">
-                        <div class="project-intro">
-                            <div>{{ project.title }}</div>
-                            <span>{{ project.details }}</span>
-                            
-                            <div class="separator"></div>
-                        </div>
-                       
-                        <div class="show-project-btn">
-                            <a mat-raised-button color="accent" href="{{ project.app_link }}" >Try it yourself</a>
-                        </div>
-                    </div>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
-
-    </div>
-</div>

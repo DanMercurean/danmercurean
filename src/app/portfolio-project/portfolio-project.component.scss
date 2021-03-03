@@ -17,12 +17,10 @@ a {
     box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 57%);
 
     img {
-        display: flex;
-        position: absolute;
-        object-fit: cover;
-        width: 100%;
+        margin: auto;
         height: 100%;
-        z-index: -1;
+        width: 100%;
+        object-fit: contain;
     }
 }
 .text-container {
@@ -49,7 +47,7 @@ a {
     }
 }
 
-.portfolio-list {
+.projects-list {
     display: flex;
     position: relative;
     flex-wrap: wrap;
