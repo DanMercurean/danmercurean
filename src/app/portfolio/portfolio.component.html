@@ -2,9 +2,9 @@
     <h1 class="add-animation-left">PORTFOLIO</h1>
 </div>
 <div class="portfolio-category">
-<div id="all" onclick="show('all')" class="portfolio-category-clicked add-animation-left">All</div>
-<div id="games" onclick="show('games')"class="add-animation-left">Games</div>
-<div id="group" onclick="show('group')" class="add-animation-left">GroupProjects</div>
+<div id="all" (click)="show('all')" class="portfolio-category-clicked add-animation-left">All</div>
+<div id="games" (click)="show('games')"  class="add-animation-left">Games</div>
+<div id="group" (click)="show('group')" class="add-animation-left">GroupProjects</div>
 </div>
 
 <app-portfolio-project></app-portfolio-project>
