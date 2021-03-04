@@ -1,11 +1,39 @@
 <div class="portfolio-main-container portfolio-projects">
     <h1 class="add-animation-left">PORTFOLIO</h1>
 </div>
+
 <div class="portfolio-category">
-<div id="all" (click)="show('all')" class="portfolio-category-clicked add-animation-left">All</div>
-<div id="games" (click)="show('games')"  class="add-animation-left">Games</div>
-<div id="group" (click)="show('group')" class="add-animation-left">GroupProjects</div>
+    <div class="add-animation-left" [class.active]="currentFilter === ''" (click)="updateFilter()">All</div>
+    <div class="add-animation-left" [class.active]="currentFilter === 'Angular'" (click)="updateFilter('Angular')">
+        Angular</div>
+    <div class="add-animation-left" [class.active]="currentFilter === 'JavaScript'"
+        (click)="updateFilter('JavaScript')">JavaScript</div>
 </div>
 
-<app-portfolio-project></app-portfolio-project>
 
+<div class="portfolio-projects">
+    <div class="add-animation-left image" *ngFor="let project of visibleProjects">
+        <img class="portfolio_img" src="{{ './assets/img/projects/' + project.img }}">
+        <div class="project-overlay">
+            <h1>{{ project.title }}</h1>
+            <p>{{ project.details }}</p>
+            <div class="project-btn">
+                <button><a href="{{ project.app_link }}" >Try it yourself</a></button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- <div>
+    <mat-grid-list cols="3" rowHeight="1.5:1">
+        <mat-grid-tile *ngFor="let project of visibleProjects" >
+            <img src="{{ './assets/img/projects/' + project.img }}">
+            <div class="project-overlay">
+                <span>{{ project.title }}</span>
+            </div>
+            
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>   -->

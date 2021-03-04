@@ -1,4 +1,4 @@
-  import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,49 +7,57 @@
 })
 export class PortfolioComponent implements OnInit {
 
-  allProjects = [
+  // selection = 'all';
+
+  currentFilter = '';
+
+
+  projects = [
     {
-        name: "ElPolloLoco",
-        type: "game"
+      title: 'El Pollo Loco',
+      details: 'A JavaScript-based jump-and-run-game.',
+      app_link: 'http://dan-mercurean.developerakademie.com/EL%20POLLO%20LOCO/index.html',
+      github_link: 'https://github.com',
+      img: 'elpolloloco.png',
+      img_mobile: '',
+      category: 'Angular'
+
     },
     {
-        name: "Join",
-        type: "group"
-    },
-    {
-        name: "Kochwelt",
-        type: "all"
+      title: 'JOIN - The Task Manager',
+      details: 'Group project of a Task Management JavaScript App',
+      app_link: 'http://gruppe-51b.developerakademie.com/index.html',
+      github_link: 'https://github.com',
+      img: 'join.png',
+      img_mobile: '',
+      category: 'JavaScript'
     }
-];
-projectsList = document.getElementById("projects-list");
-filteredProjects = [];
+  ];
+
+  visibleProjects = this.projects;
 
   constructor() { }
 
   ngOnInit(): void {
+   
   }
 
-  show( filter ){
-    this.filteredProjects = this.getFiltered(filter);
-    // console.log(filteredProjects);
-    if(this.filteredProjects.length == 0)
-        console.error(new Error("FILTER UNKNOW!"));
-    else{
-      this.populateProjectList(this.filteredProjects);
-    }
-}
-populateProjectList( allProjects ){
-  this.projectsList.innerHTML = '';
-  for(let i = 0; i < allProjects.length; i++){
-      this.projectsList.innerHTML += `
-          <div class="projects-list">
-              <p>${allProjects[i].name}</p>
-          </div>
-      `;
+
+  /**
+ * Filter visible projects
+ * @param newFilter: defines current filter selection for visible project-portfolio 
+ */
+updateFilter (newFilter? : string) {
+  if (newFilter == undefined) {
+    this.currentFilter = '';
+    this.visibleProjects = this.projects;
+  } else if (newFilter == 'Angular') {
+    this.currentFilter = 'Angular';
+    this.visibleProjects = this.projects.filter(project => project.category == 'Angular');
+  } else if (newFilter == 'JavaScript') {
+    this.currentFilter = 'JavaScript';
+    this.visibleProjects = this.projects.filter(project => project.category == 'JavaScript');
   }
-}
-getFiltered(filter){
-  return filter == 'all'? this.allProjects : this.allProjects.filter( e => e.type == filter);
 }
 
 }
