@@ -1,0 +1,36 @@
+<div class="section-container">
+
+    <div class="section-header">About
+        <div class="header-line"></div>
+    </div>
+
+
+
+    <div class="skills-wrap">
+        <div class="bio-wrap">
+            <img src="../../assets/img/profile.jpg">
+            <h2>Who I am?</h2>
+            <p>I'm a traveller, gaining new experience addicted and <strong>Front-End Developer</strong> based in Vienna, Austria</p>
+        </div>
+
+        <div class="bar-wrap">
+            <div class="bar" *ngFor="let skill of skills">
+                <div class="bar-scale">
+                    <div class="bar-fill" [style.width]="skill.skillLevel + '%'"></div>
+                    <div class="bar-tag flex"> {{ skill.skillName }}</div>
+                    <div class="bar-value">{{ skill.skillLevel + '%'}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="label-wrap">
+        <div class="label" *ngFor="let characteristic of characteristics">
+            <div class="char-icon">
+                <img src="{{characteristic.icon}}">
+            </div>
+            <h2>{{ characteristic.charName }}</h2>
+            <p>{{ characteristic.charDescr }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,239 @@
+.section-header {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-line {
+    background: #444649;
+    height: 4px;
+    margin-top: 1.1rem;
+    width: 70px;
+}
+.label-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+}
+.label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    max-width: 25%;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+.char-icon {
+    width: 8rem;
+    height: 8rem;
+    background-color: #78a5da;
+    border-radius: 25%;
+    margin-bottom: 1rem;
+}
+
+.skills-wrap {
+    display: flex;
+    padding: 8rem 0 4rem 0;
+    align-items: center;
+}
+
+.bio-wrap {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        width: 16rem;
+        height: 16rem;
+        border-radius: 50%;
+        object-fit: contain;
+    }
+    h2 {
+        font-size: 1.8rem;
+        color: #0c6edd;
+    }
+    p {
+        text-align: center;
+        width: 60%;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    strong{
+        color: #0c6edd;
+    }
+}
+.bar-wrap {
+    width: 50%;
+    border-radius: 5%;
+    padding-right: 2rem;
+    font-size: 1rem;
+}
+
+.bar {
+    width: 100%;
+    height: 1.7rem;
+    padding: 0.5rem 0;
+}
+.bar-scale {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    border-radius: 0.5rem;
+}
+.bar-fill {
+    position: absolute;
+    width: initial;
+    width: 100%;
+    height: 100%;
+    background-color: #0c6edd;
+    border-radius: 0.5rem;
+}
+.bar-tag {
+    position: absolute;
+    text-align: center;
+    width: 25%;
+    min-width: 9rem;
+    max-width: 11rem;
+    height: 100%;
+    color: white;
+    font-size: 1rem;
+    background-color: #78a5da;
+    left: 0;
+    top: 0;
+    border-radius: 0.5rem;
+}
+.bar-value {
+    text-align: end;
+    padding-right: 1rem;
+    height: 100%;
+    width: 15%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1rem;
+}
+mat-progress-bar {
+    padding: 1rem 0;
+    position: relative;
+}
+
+@media (max-width: 1400px) {
+    .bar-wrap {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .section-header {
+        font-size: 2rem;
+        padding-top: 2rem;
+    }
+    .label-wrap {
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .char-icon {
+        width: 7rem;
+        height: 7rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .label-wrap {
+        h2 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+
+    .char-icon {
+        width: 6rem;
+        height: 6rem;
+    }
+    .skills-wrap {
+        padding: 4rem 0 2rem 0;
+        flex-direction: column;
+    }
+
+    .bio-wrap {
+        width: 100%;
+        padding-bottom: 4rem;
+        font-size: 1.2rem;
+        img {
+            width: 14rem;
+            height: 14rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .bar-wrap {
+        width: 80%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .section-header {
+        font-size: 2rem;
+        padding-top: 2rem;
+    }
+
+    .label {
+        flex: 1 0 40%;
+        padding: 0 0.5rem;
+    }
+
+    .bar-wrap {
+        width: 100%;
+    }
+    .bar-tag {
+        min-width: 8rem;
+        max-width: 9rem;
+    }
+    .bar-value {
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .label {
+        margin-bottom: 1rem;
+        flex: 1 0 50%;
+    }
+    .label-icon {
+        width: 5rem;
+        height: 5rem;
+    }
+    .bio-wrap {
+        img {
+            width: 12rem;
+            height: 12rem;
+        }
+
+        p {
+            width: 100%;
+        }
+    }
+}

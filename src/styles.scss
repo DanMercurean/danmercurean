@@ -10,7 +10,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .add-animation-left {
     animation: slideLeft 1.0s ease-in-out;
 }
-
+.add-animation-right{
+    animation: slideRight 0.075s ease-in-out;
+}
 @keyframes slideLeft {
     0% {
         transform: skew(0deg) translateX(-500px);

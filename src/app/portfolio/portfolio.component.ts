@@ -20,7 +20,7 @@ export class PortfolioComponent implements OnInit {
       github_link: 'https://github.com',
       img: 'elpolloloco.png',
       img_mobile: '',
-      category: 'Angular'
+      category: 'JavaScript'
 
     },
     {
@@ -32,6 +32,15 @@ export class PortfolioComponent implements OnInit {
       img_mobile: '',
       category: 'JavaScript'
     }
+    // {
+    //   title: 'JOIN - The Task Manager',
+    //   details: 'Group project of a Task Management JavaScript App',
+    //   app_link: 'http://gruppe-51b.developerakademie.com/index.html',
+    //   github_link: 'https://github.com',
+    //   img: 'join.png',
+    //   img_mobile: '',
+    //   category: 'JavaScript'
+    // }
   ];
 
   visibleProjects = this.projects;

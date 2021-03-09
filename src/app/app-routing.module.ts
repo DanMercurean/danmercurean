@@ -7,6 +7,7 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { PortfolioProjectComponent } from './portfolio-project/portfolio-project.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -21,7 +22,9 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'portfolio', component: PortfolioProjectComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'footer', component: FooterComponent }
+  { path: 'footer', component: FooterComponent },
+  { path: 'about', component: AboutComponent },
+
 
 ];
 
