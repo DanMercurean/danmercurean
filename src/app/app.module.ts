@@ -17,7 +17,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { faBars, faCheckCircle, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { MatFormFieldModule} from '@angular/material/form-field';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -71,6 +71,7 @@ import { DialogContactComponent } from './dialog-contact/dialog-contact.componen
     MatMenuModule,
     MatInputModule,
     HttpClientModule,
+    MatDialogModule,
     MatFormFieldModule
 
   ],

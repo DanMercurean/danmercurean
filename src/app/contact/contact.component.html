@@ -18,9 +18,8 @@
         <br>
         <mat-form-field appearance="fill">
           <mat-label>Your email</mat-label>
-          <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email" name="email" />
+          <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email" name="email" required />
           <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
-            Email is <strong>required</strong>
           </mat-error>
         </mat-form-field>
         <br>
@@ -29,7 +28,7 @@
           <textarea matInput placeholder="Your message" formControlName="message" name="message" required></textarea>
         </mat-form-field>
         <mat-card-actions>
-          <button mat-raised-button color="primary" type="submit">Submit</button>
+          <button mat-raised-button color="primary" type="submit"></button>
         </mat-card-actions>
       </form>
     </div>

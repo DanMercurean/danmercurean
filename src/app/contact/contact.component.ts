@@ -10,7 +10,6 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DialogContactComponent } from '../dialog-contact/dialog-contact.component';
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -18,11 +17,9 @@ import { DialogContactComponent } from '../dialog-contact/dialog-contact.compone
 })
 export class ContactComponent implements OnInit, AfterViewInit {
   //contact = new Contact();
-
   clicked: boolean;
   messageSent = false;
   submitted = false;
-
   addressForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
     message: new FormControl('', [
@@ -31,22 +28,32 @@ export class ContactComponent implements OnInit, AfterViewInit {
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
   });
-
-
+  
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
     public dialog: MatDialog,
     private router: Router,
   ) {}
-
   ngAfterViewInit(): void {}
   ngOnInit(): void {}
-
   /**
    * Send email with contact-form-data and reset form, if form is filled correctly
    * @param formDirective
    */
+  /*
+  submitForm(formDirective: FormGroupDirective) {
+    if (formDirective.valid) {
+      console.log(formDirective.valid)
+      this.sendEmail(formDirective);
+      this.submitted = true;
+      this.clicked = true;
+      setTimeout(() => {
+        this.clicked = false;
+      }, 60000); // Disables submitting for 60s
+    }
+  }
+  */
   // send email to server
   async sendMail() {
     try {
@@ -54,7 +61,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
       formData.append('name', this.addressForm.controls['name'].value);
       formData.append('message', this.addressForm.controls['message'].value);
       formData.append('email', this.addressForm.controls['email'].value);
-      let url = 'http://dan-mercurean.developerakademie.com/send_mail.php';
+      let url = 'https://dan-mercurean.developerakademie.com/send_mail.php';
       let response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
@@ -72,7 +79,6 @@ export class ContactComponent implements OnInit, AfterViewInit {
       this.openDialog(false);
     }
   }
-
   openDialog(messageSent) {
     this.messageSent = messageSent;
     this.dialog.open(DialogContactComponent, {
@@ -81,7 +87,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
       },
     });
   }
-
+ 
 }
 function subscribe(arg0: (success: any) => void, arg1: (error: any) => void) {
   throw new Error('Function not implemented.');
