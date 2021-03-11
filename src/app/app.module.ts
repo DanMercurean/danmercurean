@@ -15,7 +15,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
-import { faBars, faCheckCircle, faExclamationTriangle, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCheckCircle, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatDialogRef } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +33,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { DialogContactComponent } from './dialog-contact/dialog-contact.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +48,8 @@ import { HomeComponent } from './home/home.component';
     ContactComponent,
     FooterComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    DialogContactComponent
   ],
   imports: [
     BrowserModule,
@@ -62,14 +68,20 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule,
+    HttpClientModule,
+    MatFormFieldModule
 
   ],
-  providers: [],
+  providers: [ {
+    provide: MatDialogRef,
+    useValue: {}
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor (library: FaIconLibrary) {
-    library.addIcons( faBars, faCheckCircle, faExclamationTriangle, faGlobeAmericas);
+    library.addIcons( faBars, faCheckCircle, faExclamationTriangle);
   }
 }

@@ -17,16 +17,30 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     flex-flow: row wrap;
+    transition: all 800ms ease-in-out;
 }
 .label {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     text-align: center;
-    max-width: 25%;
     padding: 0 1rem;
     font-size: 1rem;
+    flex: 0 1 20%;
+    h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.flex{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .char-icon {
@@ -35,6 +49,15 @@
     background-color: #78a5da;
     border-radius: 25%;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 3rem;
+    img {
+        width: 70%;
+        filter: invert(10%) sepia(23%) saturate(945%) hue-rotate(173deg) brightness(93%) contrast(90%);
+    }
 }
 
 .skills-wrap {
@@ -65,7 +88,7 @@
         font-size: 1.2rem;
         line-height: 1.8rem;
     }
-    strong{
+    strong {
         color: #0c6edd;
     }
 }
@@ -98,6 +121,8 @@
 }
 .bar-tag {
     position: absolute;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
     width: 25%;
     min-width: 9rem;

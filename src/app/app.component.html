@@ -1,6 +1,7 @@
 <app-menu [darkMode]="router.url !== '/'"></app-menu>
 
-<div [class.container]="router.url !== '/'">
+<div [class.container]="router.url !== '/'"  [class.bg-landing]="currentRoute == '/contact'" >
+
     <router-outlet></router-outlet>
 </div>
 

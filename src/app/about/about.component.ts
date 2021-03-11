@@ -20,7 +20,7 @@ export class AboutComponent implements OnInit {
       'charDescr': 'Plenty of international experience acquired through working and living in different countries and dealing with people all over the world in my professional activity in the airline sector.',
     },
     {
-      'icon': this.imgPath +'box.png',
+      'icon': this.imgPath +'box-open-solid.svg',
       'charName': 'THINKING OUT OF THE BOX',
       'charDescr': 'it was clear to me that instead of just handling the business-part, I will love to create new solutions and technologies for the up and up digital world.',
     },
