@@ -6,6 +6,7 @@ import {
   FormGroupDirective,
   FormBuilder,
   Validators,
+  NgForm,
 } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -28,6 +29,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
   });
+  endpoint: string;
   
   constructor(
     private fb: FormBuilder,
@@ -36,31 +38,22 @@ export class ContactComponent implements OnInit, AfterViewInit {
     private router: Router,
   ) {}
   ngAfterViewInit(): void {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.endpoint = 'https://dan-mercurean.developerakademie.com/send_mail.php';
+  }
   /**
    * Send email with contact-form-data and reset form, if form is filled correctly
    * @param formDirective
    */
-  /*
-  submitForm(formDirective: FormGroupDirective) {
-    if (formDirective.valid) {
-      console.log(formDirective.valid)
-      this.sendEmail(formDirective);
-      this.submitted = true;
-      this.clicked = true;
-      setTimeout(() => {
-        this.clicked = false;
-      }, 60000); // Disables submitting for 60s
-    }
-  }
-  */
   // send email to server
   async sendMail() {
+  
     try {
       const formData = new FormData();
       formData.append('name', this.addressForm.controls['name'].value);
       formData.append('message', this.addressForm.controls['message'].value);
       formData.append('email', this.addressForm.controls['email'].value);
+      //console.log(formData);
       let url = 'https://dan-mercurean.developerakademie.com/send_mail.php';
       let response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -73,7 +66,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
       });
       this.openDialog(true);
       this.router.navigate(['/contact'])
-      //this.addressForm.reset();
+      this.addressForm.reset();
     } catch (error) {
       console.error(error);
       this.openDialog(false);
@@ -86,6 +79,32 @@ export class ContactComponent implements OnInit, AfterViewInit {
         messageSent: messageSent,
       },
     });
+  }
+
+  onSubmit(myForm: NgForm) {
+   
+    console.log(myForm.value);
+    console.log(myForm.valid);
+
+    //showProgressBar
+
+    //You may also want to check the response. But again, let's keep it simple.
+    if (myForm.valid) {
+      this.http.post(this.endpoint, myForm.value)
+        .subscribe(
+          (response) => {
+            console.log(response);
+          
+            //this.submitComplete = true;
+            myForm.reset();
+          },
+          (error) => {
+            console.error(error);
+          
+            //this.submitComplete = true;
+          }
+        );
+    }
   }
  
 }

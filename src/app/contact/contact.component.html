@@ -28,9 +28,17 @@
           <textarea matInput placeholder="Your message" formControlName="message" name="message" required></textarea>
         </mat-form-field>
         <mat-card-actions>
-          <button mat-raised-button color="primary" type="submit"></button>
+          <button mat-raised-button color="primary" type="submit">Submit</button>
         </mat-card-actions>
       </form>
+      <!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" ngNativeValidate>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        <input placeholder="Name" name="name" ngModel #name="ngModel">
+        <input placeholder="Email" type="email" name="email" ngModel #email="ngModel" required>
+        <textarea placeholder="Message" name="message" ngModel #message="ngModel" required></textarea>
+        <br>
+        <button>SUBMIT</button>
+      </form> -->
     </div>
 
   </div>
