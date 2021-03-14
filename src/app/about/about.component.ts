@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
     {
       'icon': this.imgPath +'passport-solid.svg',
       'charName': 'INTERNATIONAL EXPERIENCE',
-      'charDescr': 'Plenty of international experience acquired through working and living in different countries and dealing with people all over the world in my professional activity in the airline sector.',
+      'charDescr': 'Plenty of international experience acquired through working and living in different countries (Austria, Greece, Romania) and dealing with people all over the world in my professional activity in the airline sector.',
     },
     {
       'icon': this.imgPath +'box-open-solid.svg',

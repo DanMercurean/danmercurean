@@ -16,6 +16,7 @@ export class PortfolioComponent implements OnInit {
     {
       title: 'El Pollo Loco',
       details: 'A JavaScript-based jump-and-run-game.',
+      JsDoc: 'http://dan-mercurean.developerakademie.com/EL POLLO LOCO/out/index.html',
       app_link: 'http://dan-mercurean.developerakademie.com/EL%20POLLO%20LOCO/index.html',
       github_link: 'https://github.com',
       img: 'elpolloloco.png',
@@ -26,6 +27,7 @@ export class PortfolioComponent implements OnInit {
     {
       title: 'JOIN - The Task Manager',
       details: 'Group project of a Task Management JavaScript App',
+      JsDoc: 'http://gruppe-51b.developerakademie.com/js/out/index.html',
       app_link: 'http://gruppe-51b.developerakademie.com/index.html',
       github_link: 'https://github.com',
       img: 'join.png',
@@ -33,8 +35,8 @@ export class PortfolioComponent implements OnInit {
       category: 'JavaScript'
     }
     // {
-    //   title: 'JOIN - The Task Manager',
-    //   details: 'Group project of a Task Management JavaScript App',
+    //   title: 'This Website',
+    //   details: 'It was made with Angular',
     //   app_link: 'http://gruppe-51b.developerakademie.com/index.html',
     //   github_link: 'https://github.com',
     //   img: 'join.png',

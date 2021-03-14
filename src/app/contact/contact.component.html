@@ -3,42 +3,56 @@
     xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
     <path d="M0 0 L50 100 L100 0 Z" fill="#F5F5F5" stroke="#F5F5F5"></path>
   </svg> -->
-  <div class="section-header" #contactHeader>Contact
+  <div class="section-header add-animation-left" #contactHeader>Contact
     <div class="header-line"></div>
   </div>
-  <div class="contact-dialog-wrap" #contactDialog>
+  <div class="contact-dialog-wrap add-animation-right" #contactDialog>
     <span>Got feedback or want to work together?</span>
     <div class="contact-dialog">
 
-      <form #form [formGroup]="addressForm" #contactDirective="ngForm" (ngSubmit)="sendMail()">
-        <mat-form-field appearance="fill">
-          <mat-label>Your name</mat-label>
-          <input required matInput placeholder="Name" formControlName="name" name="name" />
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-          <mat-label>Your email</mat-label>
-          <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email" name="email" required />
-          <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
-          </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-          <mat-label>Your message</mat-label>
-          <textarea matInput placeholder="Your message" formControlName="message" name="message" required></textarea>
-        </mat-form-field>
-        <mat-card-actions>
-          <button mat-raised-button color="primary" type="submit">Submit</button>
-        </mat-card-actions>
+      <form #form [formGroup]="addressForm" #contactDirective="ngForm" (ngSubmit)="sendMail(); clearForm()">
+        <mat-card class="shipping-card page-wrap">
+          <mat-card-content>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Name" formControlName="name" name="name" />
+                  <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+                    First name is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email" name="email" />
+                  <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
+                    Email is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-label> Your message</mat-label>
+                  <textarea matInput placeholder="Your message" formControlName="message" name="message"></textarea>
+                  <mat-error *ngIf="addressForm.controls['message'].hasError('required')">
+                    A Message is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">
+              Submit
+            </button>
+          </mat-card-actions>
+        </mat-card>
       </form>
-      <!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" ngNativeValidate>
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        <input placeholder="Name" name="name" ngModel #name="ngModel">
-        <input placeholder="Email" type="email" name="email" ngModel #email="ngModel" required>
-        <textarea placeholder="Message" name="message" ngModel #message="ngModel" required></textarea>
-        <br>
-        <button>SUBMIT</button>
-      </form> -->
     </div>
 
   </div>

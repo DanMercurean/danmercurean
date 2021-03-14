@@ -1,22 +1,22 @@
 <div class="section-container">
 
-    <div class="section-header">About
+    <div class="section-header add-animation-left">About
         <div class="header-line"></div>
     </div>
 
 
 
     <div class="skills-wrap">
-        <div class="bio-wrap">
+        <div class="bio-wrap add-animation-left">
             <img src="../../assets/img/profile.jpg">
             <h2>Hi I'm Dan,</h2>
             <p>I love to travel, gaining new experience addicted and <strong>Front-End Developer</strong> based in Vienna, Austria</p>
         </div>
 
-        <div class="bar-wrap">
+        <div class="bar-wrap add-animation-right">
             <div class="bar" *ngFor="let skill of skills">
                 <div class="bar-scale">
-                    <div class="bar-fill" [style.width]="skill.skillLevel + '%'"></div>
+                    <div class="bar-fill html" [style.width]="skill.skillLevel + '%'"></div>
                     <div class="bar-tag flex"> {{ skill.skillName }}</div>
                     <div class="bar-value"></div>
                     <!-- {{ skill.skillLevel + '%'}} -->
@@ -26,8 +26,8 @@
 
     </div>
     <div class="label-wrap">
-        <div class="label" *ngFor="let characteristic of characteristics">
-            <div class="char-icon flex">
+        <div class="label add-animation-left" *ngFor="let characteristic of characteristics">
+            <div class="char-icon flex ">
                 <img src="{{characteristic.icon}}">
             </div>
             <h2>{{ characteristic.charName }}</h2>
@@ -35,3 +35,11 @@
         </div>
     </div>
 </div>
+<div>
+<svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+    <path d="M0 0 L50 100 L100 0 Z" fill="#F5F5F5" stroke="#F5F5F5"></path>
+  </svg>
+  <!-- <span>What inspires me</span>
+  <p><span>〰️ nature</span></p>
+</div> -->
